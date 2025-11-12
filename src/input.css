@@ -1,0 +1,15 @@
+/*
+Theme Name: Aldeafpa
+Theme URI: http://underscores.me/
+Author: Tu Nombre
+Description: Description
+Version: 1.0.0
+Text Domain: aldeafpa
+*/
+
+/* ¡Aquí van las directivas de Tailwind! */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aquí puedes poner tu CSS personalizado si quieres */
