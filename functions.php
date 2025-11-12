@@ -176,3 +176,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Default menu fallback when no menu is assigned
+ */
+function aldeafpa_default_menu() {
+	echo '<ul class="flex flex-col sm:flex-row flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-base sm:text-lg font-medium">';
+	echo '<li><a href="' . home_url() . '" class="hover:text-blue-600 transition-colors">Inicio</a></li>';
+	echo '</ul>';
+}
+

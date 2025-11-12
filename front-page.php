@@ -7,7 +7,7 @@
         </div>
         
         <div class="text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
+            <h1 class="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
                 <?php bloginfo('name'); ?>
             </h1>
             <div class="w-16 sm:w-20 md:w-24 h-1 bg-blue-600 mx-auto mb-1 rounded-full"></div>
@@ -23,7 +23,7 @@
                         'theme_location' => 'menu-1',
                         'menu_class'     => 'flex flex-col sm:flex-row flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-base sm:text-lg font-medium',
                         'container'      => false,
-                        'fallback_cb'    => false,
+                        'fallback_cb'    => 'aldeafpa_default_menu',
                     )
                 );  
                 ?>
