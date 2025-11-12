@@ -20,11 +20,17 @@
 .contents {
   display: contents;
 }
+.flex {
+  display: flex;
+}
 .h-auto {
   height: auto;
 }
-.w-full {
-  width: 100%;
+.justify-center {
+  justify-content: center;
+}
+.rounded-full {
+  border-radius: calc(infinity * 1px);
 }
 .text-center {
   text-align: center;
