@@ -20,8 +20,11 @@
                 <?php bloginfo('name'); ?>
             </h1>
             <div class="w-16 sm:w-20 md:w-24 h-1 bg-blue-600 mx-auto mb-1 rounded-full"></div>
-            <p class="text-base sm:text-lg text-gray-600 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto leading-relaxed px-4">
-                Institución educativa comprometida con la excelencia académica
+            <p class="text-base sm:text-lg text-gray-600 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto leading-relaxed px-4 site-description-text">
+                <?php
+                $site_description = get_theme_mod( 'aldeafpa_site_description', 'Institución educativa comprometida con la excelencia académica' );
+                echo esc_html( $site_description );
+                ?>
             </p>
             
             <!-- Navigation Menu -->

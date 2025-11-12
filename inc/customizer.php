@@ -50,6 +50,21 @@ function aldeafpa_customize_register( $wp_customize ) {
 		'description' => __( 'Texto descriptivo para la imagen del banner (importante para accesibilidad).', 'aldeafpa' ),
 	) );
 
+	// Configuración para la descripción del sitio
+	$wp_customize->add_setting( 'aldeafpa_site_description', array(
+		'default'           => 'Institución educativa comprometida con la excelencia académica',
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'aldeafpa_site_description', array(
+		'label'    => __( 'Descripción del Sitio', 'aldeafpa' ),
+		'section'  => 'aldeafpa_images_section',
+		'settings' => 'aldeafpa_site_description',
+		'type'     => 'textarea',
+		'description' => __( 'Texto descriptivo que aparecerá debajo del título en la página principal.', 'aldeafpa' ),
+	) );
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
@@ -70,6 +85,12 @@ function aldeafpa_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'aldeafpa_banner_image', array(
 			'selector'        => '.banner-image',
 			'render_callback' => 'aldeafpa_customize_partial_banner_image',
+		) );
+
+		// Refresh parcial para la descripción del sitio
+		$wp_customize->selective_refresh->add_partial( 'aldeafpa_site_description', array(
+			'selector'        => '.site-description-text',
+			'render_callback' => 'aldeafpa_customize_partial_site_description',
 		) );
 	}
 }
@@ -104,6 +125,16 @@ function aldeafpa_customize_partial_banner_image() {
 	if ( $banner_image ) {
 		echo '<img src="' . esc_url( $banner_image ) . '" alt="' . esc_attr( $alt_text ) . '" class="h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
 	}
+}
+
+/**
+ * Render the site description for the selective refresh partial.
+ *
+ * @return void
+ */
+function aldeafpa_customize_partial_site_description() {
+	$site_description = get_theme_mod( 'aldeafpa_site_description', 'Institución educativa comprometida con la excelencia académica' );
+	echo esc_html( $site_description );
 }
 
 /**
