@@ -3,11 +3,11 @@
 <main class="site-main">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-center mb-8">
-            <img src="http://localhost:8081/wp-content/uploads/2025/11/R-e1762806611441.png" alt="Cintillo" class="h-auto max-w-md">
+            <img src="http://localhost:8081/wp-content/uploads/2025/11/R-e1762806611441.png" alt="Cintillo" class="h-auto max-w-4xl w-full">
         </div>
         
         <div class="text-center">
-            <h1 class="text-7xl md:text-8xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
+            <h1 class="text-7xl md:text-4xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
                 <?php bloginfo('name'); ?>
             </h1>
             <div class="w-24 h-1 bg-blue-600 mx-auto mb-1 rounded-full"></div>
@@ -25,7 +25,7 @@
                         'container'      => false,
                         'fallback_cb'    => false,
                     )
-                );
+                );  
                 ?>
             </nav>
         </div>
