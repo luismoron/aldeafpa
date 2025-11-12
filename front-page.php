@@ -5,11 +5,12 @@
         <div class="flex justify-center mb-8">
             <?php
             $banner_image = get_theme_mod( 'aldeafpa_banner_image' );
+            $alt_text = get_theme_mod( 'aldeafpa_banner_alt_text', get_bloginfo( 'name' ) . ' Cintillo' );
             if ( $banner_image ) {
-                echo '<img src="' . esc_url( $banner_image ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . ' Cintillo" class="banner-image h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
+                echo '<img src="' . esc_url( $banner_image ) . '" alt="' . esc_attr( $alt_text ) . '" class="banner-image h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
             } else {
                 // Imagen por defecto si no hay ninguna configurada
-                echo '<img src="http://localhost:8081/wp-content/uploads/2025/11/R-e1762806611441.png" alt="' . esc_attr( get_bloginfo( 'name' ) ) . ' Cintillo" class="banner-image h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
+                echo '<img src="http://localhost:8081/wp-content/uploads/2025/11/R-e1762806611441.png" alt="' . esc_attr( $alt_text ) . '" class="banner-image h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
             }
             ?>
         </div>

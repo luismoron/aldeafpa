@@ -35,6 +35,21 @@ function aldeafpa_customize_register( $wp_customize ) {
 		'description' => __( 'Sube o selecciona la imagen del cintillo que aparecerá en la página principal.', 'aldeafpa' ),
 	) ) );
 
+	// Configuración para el texto alternativo del banner
+	$wp_customize->add_setting( 'aldeafpa_banner_alt_text', array(
+		'default'           => get_bloginfo( 'name' ) . ' Cintillo',
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'aldeafpa_banner_alt_text', array(
+		'label'    => __( 'Texto Alternativo del Banner', 'aldeafpa' ),
+		'section'  => 'aldeafpa_images_section',
+		'settings' => 'aldeafpa_banner_alt_text',
+		'type'     => 'text',
+		'description' => __( 'Texto descriptivo para la imagen del banner (importante para accesibilidad).', 'aldeafpa' ),
+	) );
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
@@ -100,8 +115,9 @@ function aldeafpa_customize_partial_blogdescription() {
  */
 function aldeafpa_customize_partial_banner_image() {
 	$banner_image = get_theme_mod( 'aldeafpa_banner_image' );
+	$alt_text = get_theme_mod( 'aldeafpa_banner_alt_text', get_bloginfo( 'name' ) . ' Cintillo' );
 	if ( $banner_image ) {
-		echo '<img src="' . esc_url( $banner_image ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . ' Cintillo" class="h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
+		echo '<img src="' . esc_url( $banner_image ) . '" alt="' . esc_attr( $alt_text ) . '" class="h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">';
 	}
 }
 
