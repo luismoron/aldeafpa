@@ -14,6 +14,20 @@
             <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Institución educativa comprometida con la excelencia académica
             </p>
+            
+            <!-- Navigation Menu -->
+            <nav class="mt-8">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu_class'     => 'flex flex-wrap justify-center space-x-6 text-lg font-medium',
+                        'container'      => false,
+                        'fallback_cb'    => false,
+                    )
+                );
+                ?>
+            </nav>
         </div>
         
     </div>
