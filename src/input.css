@@ -7,9 +7,7 @@ Version: 1.0.0
 Text Domain: aldeafpa
 */
 
-/* ¡Aquí van las directivas de Tailwind! */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ¡Aquí van las importaciones de Tailwind CSS v4! */
+@import "tailwindcss";
 
 /* Aquí puedes poner tu CSS personalizado si quieres */
