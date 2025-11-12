@@ -3,15 +3,15 @@
 <main class="site-main">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-center mb-8">
-            <img src="http://localhost:8081/wp-content/uploads/2025/11/R-e1762806611441.png" alt="Cintillo" class="h-auto max-w-4xl w-full">
+            <img src="http://localhost:8081/wp-content/uploads/2025/11/R-e1762806611441.png" alt="Cintillo" class="h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl w-full">
         </div>
         
         <div class="text-center">
-            <h1 class="text-7xl md:text-4xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
                 <?php bloginfo('name'); ?>
             </h1>
-            <div class="w-24 h-1 bg-blue-600 mx-auto mb-1 rounded-full"></div>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <div class="w-16 sm:w-20 md:w-24 h-1 bg-blue-600 mx-auto mb-1 rounded-full"></div>
+            <p class="text-base sm:text-lg text-gray-600 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto leading-relaxed px-4">
                 Institución educativa comprometida con la excelencia académica
             </p>
             
@@ -21,7 +21,7 @@
                 wp_nav_menu(
                     array(
                         'theme_location' => 'menu-1',
-                        'menu_class'     => 'flex flex-wrap justify-center space-x-6 text-lg font-medium',
+                        'menu_class'     => 'flex flex-col sm:flex-row flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-base sm:text-lg font-medium',
                         'container'      => false,
                         'fallback_cb'    => false,
                     )
