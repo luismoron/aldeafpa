@@ -10,7 +10,7 @@
             <h1 class="text-7xl md:text-8xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
                 <?php bloginfo('name'); ?>
             </h1>
-            <div class="w-24 h-1 bg-blue-600 mx-auto mb-6 rounded-full"></div>
+            <div class="w-24 h-1 bg-blue-600 mx-auto mb-3 rounded-full"></div>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Institución educativa comprometida con la excelencia académica
             </p>
