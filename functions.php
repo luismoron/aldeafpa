@@ -50,6 +50,7 @@ function aldeafpa_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'aldeafpa' ),
+			'pnf-menu' => esc_html__( 'PNF Disponibles', 'aldeafpa' ),
 		)
 	);
 
