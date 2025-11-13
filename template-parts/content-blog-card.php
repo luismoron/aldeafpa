@@ -9,12 +9,10 @@
 
 ?>
 
-<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden relative">
+<a href="<?php the_permalink(); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative block">
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="w-full h-48 overflow-hidden">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
-            </a>
+            <?php the_post_thumbnail( 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
         </div>
     <?php endif; ?>
 
@@ -24,7 +22,7 @@
         </div>
 
         <h3 class="font-bold text-lg mb-2">
-            <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-blue-600"><?php the_title(); ?></a>
+            <?php the_title(); ?>
         </h3>
 
         <p class="text-gray-700 text-sm mb-4"><?php echo wp_trim_words( get_the_excerpt(), 20 ); ?></p>
@@ -37,6 +35,4 @@
             </div>
         </div>
     </div>
-
-    <a href="<?php the_permalink(); ?>" class="absolute bottom-4 right-4 bg-gradient-to-r from-green-500 to-green-700 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl hover:from-green-600 hover:to-green-800 transform hover:scale-105 transition-all duration-300 font-semibold text-sm">Leer más</a>
-</div>
+</a>

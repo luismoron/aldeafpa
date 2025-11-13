@@ -19,20 +19,18 @@
                                 $page = get_post( $item->object_id );
                                 if ( $page ) :
                         ?>
-                                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                                    <a href="<?php echo esc_url( $item->url ); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden block">
                                         <?php if ( has_post_thumbnail( $page ) ) : ?>
                                             <div class="w-full h-48 overflow-hidden">
-                                                <a href="<?php echo esc_url( $item->url ); ?>">
-                                                    <?php echo get_the_post_thumbnail( $page, 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
-                                                </a>
+                                                <?php echo get_the_post_thumbnail( $page, 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
                                             </div>
                                         <?php endif; ?>
                                         <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">
-                                                <a href="<?php echo esc_url( $item->url ); ?>" class="text-gray-900 hover:text-blue-600"><?php echo esc_html( $page->post_title ); ?></a>
+                                            <h3 class="font-bold text-lg mb-2 text-center">
+                                                <?php echo esc_html( $page->post_title ); ?>
                                             </h3>
                                         </div>
-                                    </div>
+                                    </a>
                         <?php
                                 endif;
                             endif;
