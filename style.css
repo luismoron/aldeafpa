@@ -801,6 +801,15 @@ html {
   justify-content: space-between;
   align-items: center;
 }
+.entry-content iframe, .entry-content video, .entry-content embed {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+}
+.entry-content img, .entry-content iframe, .entry-content video, .entry-content embed {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
