@@ -40,9 +40,24 @@ get_header();
                             </header>
 
                             <div class="entry-content">
-                                <p class="text-gray-600 leading-relaxed">
-                                    <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
-                                </p>
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <div class="flex gap-4">
+                                        <div class="shrink-0 w-24 h-24 overflow-hidden rounded-lg">
+                                            <a href="<?php the_permalink(); ?>" class="block">
+                                                <?php the_post_thumbnail('thumbnail', array('class' => 'w-full h-full object-cover hover:scale-105 transition-transform duration-300')); ?>
+                                            </a>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-gray-600 leading-relaxed">
+                                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                <?php else : ?>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                    </p>
+                                <?php endif; ?>
                             </div>
 
                             <footer class="entry-footer mt-4">
