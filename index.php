@@ -39,14 +39,6 @@ get_header();
 
                         <div class="p-6">
                             <header class="entry-header mb-4">
-                                <div class="flex items-center text-sm text-gray-500 mb-2">
-                                    <time datetime="<?php echo esc_attr(get_the_date('c')); ?>" class="mr-4">
-                                        <?php echo get_the_date(); ?>
-                                    </time>
-                                    <span class="mr-4">•</span>
-                                    <span><?php echo get_the_author(); ?></span>
-                                </div>
-
                                 <h2 class="text-xl font-bold text-gray-800 mb-2 leading-tight">
                                     <a href="<?php the_permalink(); ?>" class="hover:text-blue-600 transition-colors">
                                         <?php the_title(); ?>
