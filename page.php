@@ -15,24 +15,70 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main bg-gray-50 py-12">
+    <div class="container mx-auto px-4 max-w-4xl">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+        <?php
+        while ( have_posts() ) :
+            the_post();
+        ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+            <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded-lg shadow-md p-8 md:p-12'); ?>>
+                <header class="entry-header mb-8">
+                    <?php
+                    the_title( '<h1 class="entry-title text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight text-center">', '</h1>' );
+                    ?>
+                </header><!-- .entry-header -->
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                <div class="entry-content text-gray-800 leading-relaxed text-lg mb-8 text-justify">
+                    <?php
+                    the_content();
 
-		endwhile; // End of the loop.
-		?>
+                    wp_link_pages(
+                        array(
+                            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aldeafpa' ),
+                            'after'  => '</div>',
+                        )
+                    );
+                    ?>
+                </div><!-- .entry-content -->
 
-	</main><!-- #main -->
+                <?php if ( get_edit_post_link() ) : ?>
+                    <footer class="entry-footer mt-12 pt-8 border-t border-gray-200">
+                        <?php
+                        edit_post_link(
+                            sprintf(
+                                wp_kses(
+                                    /* translators: %s: Name of current post. Only visible to screen readers */
+                                    __( 'Edit <span class="screen-reader-text">%s</span>', 'aldeafpa' ),
+                                    array(
+                                        'span' => array(
+                                            'class' => array(),
+                                        ),
+                                    )
+                                ),
+                                wp_kses_post( get_the_title() )
+                            ),
+                            '<span class="edit-link">',
+                            '</span>'
+                        );
+                        ?>
+                    </footer><!-- .entry-footer -->
+                <?php endif; ?>
+            </article><!-- #post-<?php the_ID(); ?> -->
+
+            <?php
+            // If comments are open or we have at least one comment, load up the comment template.
+            if ( comments_open() || get_comments_number() ) :
+                comments_template();
+            endif;
+
+        endwhile; // End of the loop.
+        ?>
+
+    </div>
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
+
