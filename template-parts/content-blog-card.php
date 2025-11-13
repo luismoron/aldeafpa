@@ -16,23 +16,22 @@
         </div>
     <?php endif; ?>
 
-    <div class="p-4">
+    <div class="p-4 pb-20">
         <div class="mb-2">
             <span class="text-sm text-gray-500"><?php echo get_the_date(); ?></span>
         </div>
 
-        <h3 class="font-bold text-lg mb-2">
+        <h3 class="font-bold text-lg mb-2 text-center">
             <?php the_title(); ?>
         </h3>
 
-        <p class="text-gray-700 text-sm mb-4"><?php echo wp_trim_words( get_the_excerpt(), 20 ); ?></p>
+        <p class="text-gray-700 text-sm mb-4 mt-2 text-justify"><?php echo wp_trim_words( get_the_excerpt(), 60 ); ?></p>
+    </div>
 
-        <div class="flex items-center">
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, '', '', array( 'class' => 'rounded-full mr-3' ) ); ?>
-            <div>
-                <p class="text-sm font-medium text-gray-900"><?php the_author(); ?></p>
-                <p class="text-sm text-gray-500">Autor</p> <!-- Placeholder para cargo, puedes usar un campo custom -->
-            </div>
+    <div class="absolute bottom-4 left-4 flex items-center">
+        <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, '', '', array( 'class' => 'rounded-full mr-3' ) ); ?>
+        <div>
+            <p class="text-sm font-medium text-gray-900">Autor <?php the_author(); ?></p>
         </div>
     </div>
 </a>

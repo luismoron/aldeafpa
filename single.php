@@ -69,7 +69,7 @@ get_header();
                 </footer><!-- .entry-footer -->
 
                 <div class="text-center mt-8 mb-8">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 font-semibold text-lg">Inicio</a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 font-semibold text-lg">Volver a la Página Principal</a>
                 </div>
             </article><!-- #post-<?php the_ID(); ?> -->
 
