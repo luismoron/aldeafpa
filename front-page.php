@@ -5,19 +5,46 @@
 
         <!-- Sección de PNF Disponibles -->
         <?php if ( has_nav_menu( 'pnf-menu' ) ) : ?>
-            <section id="pnf" class="py-12">
-                <h2 class="text-2xl font-bold mb-4 text-center">Programas Nacionales De Formación "PNF" </br> Disponibles En Nuestra Aldea</h2>
-                <div class="pnf-content">
-                    <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'pnf-menu',
-                        'menu_class'     => 'list-disc list-inside space-y-2',
-                        'container'      => false,
-                        'fallback_cb'    => false,
-                    ) );
-                    ?>
-                </div>
-            </section>
+            <?php
+            $locations = get_nav_menu_locations();
+            $menu_items = isset( $locations['pnf-menu'] ) ? wp_get_nav_menu_items( $locations['pnf-menu'] ) : false;
+            if ( $menu_items ) :
+            ?>
+                <section id="pnf" class="py-12">
+                    <h2 class="text-2xl font-bold mb-4 text-center">PNF Disponibles</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <?php
+                        foreach ( $menu_items as $item ) :
+                            if ( $item->object === 'page' ) :
+                                $page = get_post( $item->object_id );
+                                if ( $page ) :
+                        ?>
+                                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                                        <?php if ( has_post_thumbnail( $page ) ) : ?>
+                                            <div class="w-full h-48 overflow-hidden">
+                                                <a href="<?php echo esc_url( $item->url ); ?>">
+                                                    <?php echo get_the_post_thumbnail( $page, 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="p-4">
+                                            <h3 class="font-bold text-lg mb-2">
+                                                <a href="<?php echo esc_url( $item->url ); ?>" class="text-gray-900 hover:text-blue-600"><?php echo esc_html( $page->post_title ); ?></a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                        <?php
+                                endif;
+                            endif;
+                        endforeach;
+                        ?>
+                    </div>
+                </section>
+            <?php else : ?>
+                <p class="text-center py-12">El menú "PNF Disponibles" está asignado pero no tiene páginas agregadas.</p>
+            <?php endif; ?>
+        <?php else : ?>
+            <p class="text-center py-12">No hay menú asignado a la ubicación "PNF Disponibles".</p>
         <?php endif; ?>
 
         <!-- Sección de Noticias -->

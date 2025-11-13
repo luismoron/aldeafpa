@@ -58,6 +58,10 @@ get_header();
                     ?>
                 </div><!-- .entry-content -->
 
+                <div class="text-center mt-8 mb-8">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 font-semibold text-lg">Regresar a la Página de Inicio</a>
+                </div>
+
                 <?php if ( 'post' === get_post_type() ) : ?>
                     <div class="entry-meta text-left text-sm text-gray-600 mt-8 mb-6">
                         <strong>Publicado el:</strong> <?php echo get_the_date(); ?> | <strong>Por:</strong> <?php the_author(); ?>
