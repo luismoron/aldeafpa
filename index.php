@@ -34,7 +34,6 @@ get_header();
                             <div class="aspect-video overflow-hidden">
                                 <a href="<?php the_permalink(); ?>" class="block group">
                                     <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover group-hover:scale-110 transition-transform duration-500')); ?>
-                                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                                 </a>
                             </div>
                         <?php endif; ?>

@@ -11,3 +11,14 @@ Text Domain: aldeafpa
 @import "tailwindcss";
 
 /* Aquí puedes poner tu CSS personalizado si quieres */
+
+/* Estilos personalizados para el menú de navegación */
+nav ul li a {
+    background-color: transparent !important;
+    color: inherit;
+}
+
+nav ul li a:hover {
+    background-color: transparent !important;
+    color: #2563eb; /* text-blue-600 */
+}
