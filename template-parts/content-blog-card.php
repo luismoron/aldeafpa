@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden relative">
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="w-full h-48 overflow-hidden">
             <a href="<?php the_permalink(); ?>">
@@ -19,15 +19,8 @@
     <?php endif; ?>
 
     <div class="p-4">
-        <div class="flex items-center justify-between mb-2">
+        <div class="mb-2">
             <span class="text-sm text-gray-500"><?php echo get_the_date(); ?></span>
-            <?php
-            $categories = get_the_category();
-            if ( ! empty( $categories ) ) :
-                $category = $categories[0];
-            ?>
-                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"><?php echo esc_html( $category->name ); ?></span>
-            <?php endif; ?>
         </div>
 
         <h3 class="font-bold text-lg mb-2">
@@ -44,4 +37,6 @@
             </div>
         </div>
     </div>
+
+    <a href="<?php the_permalink(); ?>" class="absolute bottom-4 right-4 bg-gradient-to-r from-green-500 to-green-700 text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl hover:from-green-600 hover:to-green-800 transform hover:scale-105 transition-all duration-300 font-semibold text-sm">Leer más</a>
 </div>
