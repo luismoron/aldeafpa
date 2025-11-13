@@ -65,6 +65,20 @@ function aldeafpa_customize_register( $wp_customize ) {
 		'description' => __( 'Texto descriptivo que aparecerá debajo del título en la página principal.', 'aldeafpa' ),
 	) );
 
+	// Configuración para la imagen debajo del menú
+	$wp_customize->add_setting( 'aldeafpa_menu_image', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aldeafpa_menu_image', array(
+		'label'    => __( 'Imagen Debajo del Menú', 'aldeafpa' ),
+		'section'  => 'aldeafpa_images_section',
+		'settings' => 'aldeafpa_menu_image',
+		'description' => __( 'Sube o selecciona una imagen que aparecerá debajo del menú de navegación.', 'aldeafpa' ),
+	) ) );
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
@@ -91,6 +105,12 @@ function aldeafpa_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'aldeafpa_site_description', array(
 			'selector'        => '.site-description-text',
 			'render_callback' => 'aldeafpa_customize_partial_site_description',
+		) );
+
+		// Refresh parcial para la imagen debajo del menú
+		$wp_customize->selective_refresh->add_partial( 'aldeafpa_menu_image', array(
+			'selector'        => '.menu-image',
+			'render_callback' => 'aldeafpa_customize_partial_menu_image',
 		) );
 	}
 }
@@ -135,6 +155,18 @@ function aldeafpa_customize_partial_banner_image() {
 function aldeafpa_customize_partial_site_description() {
 	$site_description = get_theme_mod( 'aldeafpa_site_description', 'Institución educativa comprometida con la excelencia académica' );
 	echo esc_html( $site_description );
+}
+
+/**
+ * Render the menu image for the selective refresh partial.
+ *
+ * @return void
+ */
+function aldeafpa_customize_partial_menu_image() {
+	$menu_image = get_theme_mod( 'aldeafpa_menu_image' );
+	if ( $menu_image ) {
+		echo '<img src="' . esc_url( $menu_image ) . '" alt="' . esc_attr__( 'Imagen debajo del menú', 'aldeafpa' ) . '" class="menu-image h-auto max-w-full mx-auto">';
+	}
 }
 
 /**

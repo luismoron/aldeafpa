@@ -73,6 +73,16 @@
 					);
 					?>
 				</nav>
+
+				<!-- Imagen debajo del menú -->
+				<div class="mt-8">
+					<?php
+					$menu_image = get_theme_mod( 'aldeafpa_menu_image' );
+					if ( $menu_image ) {
+						echo '<img src="' . esc_url( $menu_image ) . '" alt="' . esc_attr__( 'Imagen debajo del menú', 'aldeafpa' ) . '" class="menu-image h-auto max-w-full mx-auto">';
+					}
+					?>
+				</div>
 			</div>
 		</div>
 	</header><!-- #masthead -->
