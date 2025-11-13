@@ -46,8 +46,7 @@
 			</div>
 		</div>
 
-		<!-- Site Title, Description and Menu - appears on all pages except front page -->
-		<?php if ( ! is_front_page() ) : ?>
+		<!-- Site Title, Description and Menu - appears on all pages -->
 		<div class="container mx-auto px-4 py-8">
 			<div class="text-center">
 				<h1 class="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
@@ -76,5 +75,4 @@
 				</nav>
 			</div>
 		</div>
-		<?php endif; ?>
 	</header><!-- #masthead -->
