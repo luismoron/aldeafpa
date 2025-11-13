@@ -66,6 +66,7 @@
 						<!-- Menú personalizado para la página de inicio con anclas -->
 						<ul class="flex flex-col sm:flex-row flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-base sm:text-lg font-medium">
 							<li><a href="#noticias" class="hover:text-blue-600 transition-colors">Noticias</a></li>
+							<li><a href="#pnf" class="hover:text-blue-600 transition-colors">PNF Disponibles</a></li>
 							<!-- Añadir más enlaces a secciones si es necesario -->
 						</ul>
 					<?php else : ?>

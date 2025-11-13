@@ -5,8 +5,8 @@
 
         <!-- Sección de PNF Disponibles -->
         <?php if ( has_nav_menu( 'pnf-menu' ) ) : ?>
-            <section class="py-12">
-                <h2 class="text-3xl font-bold mb-4 text-center">Programas Nacionales de Formación "PNF" Disponibles </h2>
+            <section id="pnf" class="py-12">
+                <h2 class="text-2xl font-bold mb-4 text-center">Programas Nacionales De Formación "PNF" </br> Disponibles En Nuestra Aldea</h2>
                 <div class="pnf-content">
                     <?php
                     wp_nav_menu( array(
