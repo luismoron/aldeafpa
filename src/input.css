@@ -22,3 +22,8 @@ nav ul li a:hover {
     background-color: transparent !important;
     color: #2563eb; /* text-blue-600 */
 }
+
+/* Scroll suave para anclas */
+html {
+    scroll-behavior: smooth;
+}

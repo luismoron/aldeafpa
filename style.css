@@ -235,9 +235,6 @@
   .static {
     position: static;
   }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
-  }
   .col-span-full {
     grid-column: 1 / -1;
   }
@@ -349,6 +346,9 @@
   .w-full {
     width: 100%;
   }
+  .max-w-full {
+    max-width: 100%;
+  }
   .max-w-md {
     max-width: var(--container-md);
   }
@@ -403,9 +403,6 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
-  }
-  .bg-black {
-    background-color: var(--color-black);
   }
   .bg-blue-100 {
     background-color: var(--color-blue-100);
@@ -462,6 +459,9 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
   .text-center {
     text-align: center;
   }
@@ -471,6 +471,10 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);
@@ -747,6 +751,9 @@ nav ul li a {
 nav ul li a:hover {
   background-color: transparent !important;
   color: #2563eb;
+}
+html {
+  scroll-behavior: smooth;
 }
 @property --tw-rotate-x {
   syntax: "*";
