@@ -10,9 +10,9 @@
             $menu_items = isset( $locations['pnf-menu'] ) ? wp_get_nav_menu_items( $locations['pnf-menu'] ) : false;
             if ( $menu_items ) :
             ?>
-                <section id="pnf" class="py-12">
+                <section id="pnf" class="py-16">
                     <h2 class="text-2xl font-bold mb-4 text-center">Programas Nacionales de Formación </br> "PNF" Disponibles en Nuestra <?php echo get_bloginfo('name'); ?></h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
                         <?php
                         foreach ( $menu_items as $item ) :
                             if ( $item->object === 'page' ) :
