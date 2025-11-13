@@ -27,3 +27,16 @@ nav ul li a:hover {
 html {
     scroll-behavior: smooth;
 }
+
+/* Limitar ancho máximo de imágenes en entradas */
+.entry-content img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Navegación entre posts en línea */
+.navigation.post-navigation .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -72,8 +72,8 @@ get_header();
             <?php
             the_post_navigation(
                 array(
-                    'prev_text' => '<span class="nav-subtitle font-medium text-gray-600">' . esc_html__( 'Anterior:', 'aldeafpa' ) . '</span> <span class="nav-title block text-lg font-bold text-gray-900 hover:text-blue-600">%title</span>',
-                    'next_text' => '<span class="nav-subtitle font-medium text-gray-600">' . esc_html__( 'Siguiente:', 'aldeafpa' ) . '</span> <span class="nav-title block text-lg font-bold text-gray-900 hover:text-blue-600">%title</span>',
+                    'prev_text' => '<span class="nav-arrow text-2xl font-bold text-gray-600 hover:text-blue-600">&larr;</span> <span class="nav-label ml-2 text-sm font-medium text-gray-600">Anterior</span>',
+                    'next_text' => '<span class="nav-label mr-2 text-sm font-medium text-gray-600">Siguiente</span> <span class="nav-arrow text-2xl font-bold text-gray-600 hover:text-blue-600">&rarr;</span>',
                 )
             );
 
