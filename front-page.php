@@ -58,7 +58,7 @@
 
             if ($noticias_query->have_posts()) :
             ?>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="columns-1 md:columns-3 gap-6">
                     <?php
                     while ($noticias_query->have_posts()) :
                         $noticias_query->the_post();

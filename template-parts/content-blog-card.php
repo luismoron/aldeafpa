@@ -9,7 +9,7 @@
 
 ?>
 
-<a href="<?php the_permalink(); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative block">
+<a href="<?php the_permalink(); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative block break-inside-avoid">
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="w-full h-48 overflow-hidden">
             <?php the_post_thumbnail( 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>

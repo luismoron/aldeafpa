@@ -378,6 +378,14 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .columns-1 {
+    -moz-columns: 1;
+         columns: 1;
+  }
+  .break-inside-avoid {
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -769,6 +777,12 @@
   .md\:max-w-lg {
     @media (width >= 48rem) {
       max-width: var(--container-lg);
+    }
+  }
+  .md\:columns-3 {
+    @media (width >= 48rem) {
+      -moz-columns: 3;
+           columns: 3;
     }
   }
   .md\:grid-cols-2 {
