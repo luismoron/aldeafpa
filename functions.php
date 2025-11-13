@@ -180,11 +180,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Default menu fallback when no menu is assigned
  */
 function aldeafpa_default_menu() {
-	// Obtener la URL de la página de entradas si está configurada
-	$posts_page_url = get_option('page_for_posts') ? get_permalink(get_option('page_for_posts')) : home_url();
-
 	echo '<ul class="flex flex-col sm:flex-row flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-base sm:text-lg font-medium">';
-	echo '<li><a href="' . esc_url($posts_page_url) . '" class="hover:text-blue-600 transition-colors">Inicio</a></li>';
+	echo '<li><a href="' . home_url() . '" class="hover:text-blue-600 transition-colors">Inicio</a></li>';
 	echo '</ul>';
 }
 
