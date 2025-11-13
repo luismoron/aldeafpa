@@ -29,13 +29,6 @@ get_header();
                 while (have_posts()) : the_post();
                     ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300'); ?>>
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="aspect-video overflow-hidden">
-                                <a href="<?php the_permalink(); ?>" class="block">
-                                    <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover hover:scale-105 transition-transform duration-300')); ?>
-                                </a>
-                            </div>
-                        <?php endif; ?>
 
                         <div class="p-6">
                             <header class="entry-header mb-4">
