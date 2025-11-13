@@ -127,8 +127,8 @@ if ( ! function_exists( 'aldeafpa_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+			<div class="post-thumbnail mb-8">
+				<?php the_post_thumbnail('large', array('class' => 'w-full h-auto rounded-lg shadow-md')); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
