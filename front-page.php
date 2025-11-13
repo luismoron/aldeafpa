@@ -3,12 +3,6 @@
 <main class="site-main">
     <div class="container mx-auto px-4 py-2">
 
-        <!-- Sección de Inicio -->
-        <section id="inicio" class="py-12">
-            <h1 class="text-4xl font-bold text-center mb-4">Bienvenido a Aldeafpa</h1>
-            <p class="text-center text-lg">Institución educativa comprometida con la excelencia académica.</p>
-        </section>
-
         <!-- Sección de Noticias -->
         <section id="noticias" class="py-12">
             <h2 class="text-3xl font-bold text-center mb-8">Últimas Noticias</h2>
