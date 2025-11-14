@@ -85,14 +85,20 @@
             <?php
             $nosotros_page = get_page_by_title('Nosotros');
             if ($nosotros_page) :
+                global $post;
+                $post = $nosotros_page;
+                setup_postdata($post);
             ?>
                 <div class="container mx-auto px-4">
                     <h2 class="text-3xl font-bold text-center mb-8"><?php echo esc_html($nosotros_page->post_title); ?></h2>
                     <div class="prose prose-lg mx-auto">
-                        <?php echo apply_filters('the_content', $nosotros_page->post_content); ?>
+                        <?php the_content(); ?>
                     </div>
                 </div>
-            <?php else : ?>
+            <?php
+                wp_reset_postdata();
+            else :
+            ?>
                 <p class="text-center">La página "Nosotros" no existe aún. Crea una página con ese título en WordPress.</p>
             <?php endif; ?>
         </section>
