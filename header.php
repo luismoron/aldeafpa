@@ -52,7 +52,7 @@
 				<h1 class="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-serif font-bold text-gray-800 mb-4 tracking-wide leading-tight">
 					<?php bloginfo('name'); ?>
 				</h1>
-				<div class="w-16 sm:w-20 md:w-24 h-1 bg-blue-600 mx-auto mb-1 rounded-full"></div>
+				<div class="w-15 sm:w-12 md:w-24 h-px bg-blue-600 mx-auto mb-1 rounded-full"></div>
 				<p class="text-base sm:text-lg text-gray-600 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto leading-relaxed px-4 site-description-text">
 					<?php
 					$site_description = get_theme_mod( 'aldeafpa_site_description', 'Institución educativa comprometida con la excelencia académica' );
@@ -67,7 +67,7 @@
 						<ul class="flex flex-col sm:flex-row flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-base sm:text-lg font-medium">
 							<li><a href="#noticias" class="hover:text-blue-600 transition-colors">Noticias</a></li>
 							<li><a href="#pnf" class="hover:text-blue-600 transition-colors">PNF Disponibles</a></li>
-							<!-- Añadir más enlaces a secciones si es necesario -->
+							<li><a href="#nosotros" class="hover:text-blue-600 transition-colors">Nosotros</a></li>
 						</ul>
 					<?php else : ?>
 						<?php
