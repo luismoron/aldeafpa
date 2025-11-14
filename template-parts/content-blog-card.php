@@ -11,8 +11,8 @@
 
 <a href="<?php the_permalink(); ?>" class="bg-white rounded-lg shadow-lg sm:shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative block break-inside-avoid mt-6 mb-6">
     <?php if ( has_post_thumbnail() ) : ?>
-        <div class="w-full h-64 sm:h-96 overflow-hidden">
-            <?php the_post_thumbnail( 'blog-card', array( 'class' => 'w-full h-full object-cover' ) ); ?>
+        <div class="w-full overflow-hidden">
+            <?php the_post_thumbnail( 'blog-card', array( 'class' => 'w-full' ) ); ?>
         </div>
     <?php endif; ?>
 
