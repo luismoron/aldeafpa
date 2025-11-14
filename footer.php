@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="contactanos" class="site-footer bg-gray-100">
+	<footer id="contactanos" class="site-footer bg-gray-100 py-8 sm:py-16">
 		<?php
 		$contactanos_page = get_page_by_title('Contactanos');
 		if ($contactanos_page) :
@@ -20,7 +20,7 @@
 			setup_postdata($post);
 		?>
 			<div class="container mx-auto px-4">
-				<div class="prose prose-lg mx-auto text-center">
+				<div class="prose prose-base sm:prose-lg mx-auto text-center sm:text-left">
 					<?php the_content(); ?>
 				</div>
 			</div>
