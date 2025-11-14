@@ -68,6 +68,7 @@
 							<li><a href="#noticias" class="hover:text-blue-600 transition-colors">Noticias</a></li>
 							<li><a href="#pnf" class="hover:text-blue-600 transition-colors">PNF Disponibles</a></li>
 							<li><a href="#nosotros" class="hover:text-blue-600 transition-colors">Nosotros</a></li>
+							<li><a href="#contactanos" class="hover:text-blue-600 transition-colors">Contactanos</a></li>
 						</ul>
 					<?php else : ?>
 						<?php

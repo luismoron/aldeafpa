@@ -11,8 +11,25 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<!-- Footer info removed for static page -->
+	<footer id="contactanos" class="site-footer bg-gray-100">
+		<?php
+		$contactanos_page = get_page_by_title('Contactanos');
+		if ($contactanos_page) :
+			global $post;
+			$post = $contactanos_page;
+			setup_postdata($post);
+		?>
+			<div class="container mx-auto px-4">
+				<div class="prose prose-lg mx-auto text-center">
+					<?php the_content(); ?>
+				</div>
+			</div>
+		<?php
+			wp_reset_postdata();
+		else :
+		?>
+			<p class="text-center">La página "Contactanos" no existe aún. Crea una página con ese título en WordPress.</p>
+		<?php endif; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
