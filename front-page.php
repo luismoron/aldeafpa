@@ -90,7 +90,7 @@
                 setup_postdata($post);
             ?>
                 <div class="container mx-auto px-4">
-                    <div class="prose prose-lg mx-auto">
+                    <div class="prose prose-lg mx-auto text-justify">
                         <?php the_content(); ?>
                     </div>
                 </div>
