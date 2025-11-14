@@ -12,8 +12,8 @@
             $menu_items = isset( $locations['pnf-menu'] ) ? wp_get_nav_menu_items( $locations['pnf-menu'] ) : false;
             if ( $menu_items ) :
             ?>
-                <section id="pnf" class="py-16">
-                    <h2 class="text-2xl font-bold mb-4 text-center">Programas Nacionales de Formación </br> "PNF" Disponibles en Nuestra <?php echo get_bloginfo('name'); ?></h2>
+                <section id="pnf" class="py-20 sm:py-16">
+                    <h2 class="text-3xl sm:text-2xl font-bold mb-8 sm:mb-6 text-center">Programas Nacionales de Formación </br> "PNF" Disponibles en Nuestra <?php echo get_bloginfo('name'); ?></h2>
                     <div class="flex flex-wrap justify-center gap-6 py-10 mx-auto max-w-7xl">
                         <?php
                         foreach ( $menu_items as $item ) :
@@ -21,7 +21,7 @@
                                 $page = get_post( $item->object_id );
                                 if ( $page ) :
                         ?>
-                                    <a href="<?php echo esc_url( $item->url ); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden block w-96">
+                                    <a href="<?php echo esc_url( $item->url ); ?>" class="bg-white rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden block w-96">
                                         <?php if ( has_post_thumbnail( $page ) ) : ?>
                                         <div class="w-full h-64 sm:h-80 overflow-hidden">
                                             <?php echo get_the_post_thumbnail( $page, 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
@@ -47,9 +47,12 @@
             <p class="text-center py-12">No hay menú asignado a la ubicación "PNF Disponibles".</p>
         <?php endif; ?>
 
+        <!-- Línea separadora -->
+        <div class="w-full h-px bg-gray-300 shadow-sm my-8"></div>
+
         <!-- Sección de Noticias -->
-        <section id="noticias" class="py-12">
-            <h2 class="text-3xl font-bold text-center mb-8">Últimas Noticias</h2>
+        <section id="noticias" class="py-16 sm:py-12">
+            <h2 class="text-4xl sm:text-3xl font-bold text-center mb-16 sm:mb-12">Últimas Noticias</h2>
             <?php
             // Query para obtener las últimas noticias (posts)
             $noticias_query = new WP_Query(array(

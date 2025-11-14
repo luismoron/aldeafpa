@@ -9,14 +9,14 @@
 
 ?>
 
-<a href="<?php the_permalink(); ?>" class="bg-white rounded-lg shadow-lg sm:shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative block break-inside-avoid mt-6 mb-6">
+<a href="<?php the_permalink(); ?>" class="bg-white rounded-lg shadow-lg sm:shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden relative block break-inside-avoid mt-8 mb-8 sm:mt-6 sm:mb-6">
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="w-full overflow-hidden">
             <?php the_post_thumbnail( 'blog-card', array( 'class' => 'w-full' ) ); ?>
         </div>
     <?php endif; ?>
 
-    <div class="p-2 sm:p-4 pb-20">
+    <div class="py-4 px-2 sm:py-4 sm:px-4 pb-20">
         <div class="mb-2">
             <span class="text-sm text-gray-500"><?php echo get_the_date(); ?></span>
         </div>
