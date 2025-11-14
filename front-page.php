@@ -21,14 +21,14 @@
                                 $page = get_post( $item->object_id );
                                 if ( $page ) :
                         ?>
-                                    <a href="<?php echo esc_url( $item->url ); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden block">
+                                    <a href="<?php echo esc_url( $item->url ); ?>" class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden block w-96">
                                         <?php if ( has_post_thumbnail( $page ) ) : ?>
-                                            <div class="w-full h-48 overflow-hidden">
-                                                <?php echo get_the_post_thumbnail( $page, 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
-                                            </div>
-                                        <?php endif; ?>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2 text-center">
+                                        <div class="w-full h-64 sm:h-80 overflow-hidden">
+                                            <?php echo get_the_post_thumbnail( $page, 'medium', array( 'class' => 'w-full h-full object-cover' ) ); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                        <div class="p-6">
+                                            <h3 class="font-bold text-xl mb-2 text-center">
                                                 <?php echo esc_html( $page->post_title ); ?>
                                             </h3>
                                         </div>
