@@ -46,6 +46,9 @@ function aldeafpa_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// Add custom image size for blog cards
+	add_image_size( 'blog-card', 600, 400, true );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
