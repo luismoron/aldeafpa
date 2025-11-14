@@ -1,183 +1,140 @@
-# Aldeafpa - Tema WordPress para Instituciones Educativas
+# Documentación del Tema Aldeafpa
 
-**Aldeafpa** es un tema moderno y elegante diseñado específicamente para instituciones educativas. Construido sobre el framework Tailwind CSS v4.1.17, ofrece un diseño limpio, responsive y completamente personalizable a través del panel de administración de WordPress.
+## Introducción
 
-## ✨ Características Principales
+El tema **Aldeafpa** es un tema personalizado de WordPress diseñado para la institución educativa "Aldea Universitaria Fray Pedro de Agreda". Incluye una página principal estática con secciones dinámicas para mostrar programas (PNF), noticias, información institucional y contacto. El tema utiliza Tailwind CSS para estilos modernos y responsivos.
 
-### 🎨 Diseño Moderno
+### Características Principales
+- **Página principal personalizada**: Muestra secciones como PNF Disponibles, Últimas Noticias, Nosotros y Contacto.
+- **Menú de navegación**: Enlaces de ancla para navegación suave entre secciones.
+- **Responsive**: Optimizado para móviles, tablets y desktop.
+- **Integración con WordPress**: Usa páginas, posts y menús nativos.
+- **Estilos modernos**: Sombras, transiciones y layout tipo Pinterest para noticias.
 
-- **Framework CSS:** Tailwind CSS v4.1.17 para un desarrollo ágil y consistente
-- **Diseño Responsive:** Optimizado para todos los dispositivos (móvil, tablet, desktop)
-- **Tipografía Elegante:** Fuentes serif para un aspecto institucional y profesional
+## Instalación
 
-### 🖼️ Sistema de Imágenes Personalizables
+1. **Descarga el tema**: Copia la carpeta del tema (`aldeafpa`) a `wp-content/themes/` en tu instalación de WordPress.
+2. **Activa el tema**: Ve a **Apariencia > Temas** en el panel de WordPress y activa "Aldeafpa".
+3. **Instala dependencias**: Ejecuta `pnpm install` y `pnpm run build:css` en la carpeta del tema para compilar Tailwind CSS.
+4. **Configura la página principal**: Ve a **Ajustes > Lectura** y selecciona "Una página estática" como página principal, eligiendo la página que uses como front-page (generalmente creada automáticamente).
 
-- **Cintillo/Banner:** Imagen principal configurable desde el Personalizador
-- **Texto Alternativo:** Configurable para accesibilidad SEO
-- **Fallback Automático:** Imagen por defecto si no se configura ninguna
+## Configuración General
 
-### 📝 Contenido Personalizable
+### Opciones de Tema
+El tema incluye opciones personalizables en **Apariencia > Personalizar**:
+- **Imagen del banner**: Sube una imagen para el cintillo superior.
+- **Texto alternativo del banner**: Descripción para accesibilidad.
+- **Descripción del sitio**: Texto debajo del título del sitio.
+- **Imagen del menú**: Imagen opcional debajo del menú de navegación.
+- **Imagen del menú**: Imagen opcional debajo del menú.
 
-- **Título del Sitio:** Nombre de la institución
-- **Descripción:** Texto descriptivo configurable
-- **Menú de Navegación:** Sistema completo con fallback automático
+### Tamaños de Imagen
+El tema define tamaños personalizados:
+- **blog-card**: 600x400 píxeles para imágenes de noticias.
+- Usa el regenerador de miniaturas si cambias imágenes existentes.
 
-### 📰 Sistema de Entradas
+## Header (Cabecera)
 
-- **Página de Noticias:** Diseño de grid responsive para mostrar entradas
-- **Paginación:** Navegación intuitiva entre páginas
-- **Extractos:** Resúmenes automáticos de las entradas
-- **Metadatos:** Fecha y autor de cada entrada
+El header incluye el banner, título del sitio, descripción, menú y una imagen opcional.
 
-### ⚙️ Panel de Personalización
+### Configuración
+1. **Banner**: En **Personalizar > Imagen del banner**, sube una imagen (recomendado: 1024x200 píxeles o similar).
+2. **Título y descripción**: Se toman de **Ajustes > General**. El título se muestra en grande con una línea azul decorativa.
+3. **Menú de navegación**: Para la página principal, incluye enlaces a secciones (#noticias, #pnf, #nosotros, #contactanos). Para otras páginas, usa el menú asignado en **Apariencia > Menús**.
+4. **Imagen debajo del menú**: Opcional, sube en **Personalizar > Imagen del menú**.
 
-- **Sección Dedicada:** "Imágenes del Tema" en Apariencia → Personalizar
-- **Configuraciones en Tiempo Real:** Vista previa instantánea de cambios
-- **Campos de Texto:** Descripción y texto alternativo editables
+### Personalización
+- La línea azul debajo del título es responsiva (más ancha en desktop).
+- El menú es responsive: vertical en móviles, horizontal en pantallas más grandes.
 
-## 🚀 Instalación y Configuración
+## Secciones de la Página Principal
 
-### Requisitos del Sistema
+La página principal (`front-page.php`) muestra secciones dinámicas.
 
-- **WordPress:** Versión 5.0 o superior
-- **PHP:** Versión 7.4 o superior
-- **Node.js:** Versión 16.0 o superior (para desarrollo)
-- **Composer:** Para dependencias PHP
+### 1. Sección PNF Disponibles
+Muestra tarjetas de programas basadas en un menú de WordPress.
 
-### Instalación del Tema
+#### Configuración
+1. Crea páginas para cada PNF (ej. "PNF Informática").
+2. Ve a **Apariencia > Menús** y crea un menú llamado "PNF Disponibles".
+3. Agrega las páginas creadas al menú.
+4. Asigna el menú a la ubicación "PNF Disponibles".
 
-1. **Descarga o clona** el repositorio en `wp-content/themes/`
-2. **Activa el tema** desde Apariencia → Temas en WordPress Admin
-3. **Configura la página principal** como estática en Ajustes → Lectura
+#### Apariencia
+- Tarjetas con imagen destacada, título y hover effects.
+- Layout flexible: se adapta al número de items.
+- Centrado y responsive.
 
-### Configuración Inicial
+### 2. Sección Últimas Noticias
+Muestra las últimas entradas (posts) en layout tipo Pinterest.
 
-```bash
-# Instalar dependencias de desarrollo
-npm install
+#### Configuración
+1. Crea entradas en **Entradas > Añadir nueva**.
+2. Agrega imagen destacada a cada entrada.
+3. El tema muestra las 8 últimas entradas publicadas.
 
-# Compilar CSS (desarrollo)
-npm run watch
+#### Apariencia
+- Columnas responsivas (1 en móvil, 2 en sm, 3 en md+).
+- Imágenes sin recorte, alturas variables.
+- Tarjetas con sombra, título, extracto y autor.
 
-# Compilar CSS (producción)
-npm run build
-```
+### 3. Sección Nosotros
+Incrusta el contenido de una página llamada "Nosotros".
 
-## 🎛️ Personalización
+#### Configuración
+1. Crea una página titulada exactamente "Nosotros" en **Páginas > Añadir nueva**.
+2. Agrega contenido (texto, imágenes, bloques).
+3. Publica la página.
 
-### Imágenes y Contenido
+#### Apariencia
+- Contenido centrado con estilos de texto (prose).
+- Sin título fijo; incluye el título en el contenido si deseas.
 
-1. Ve a **Apariencia → Personalizar**
-2. Selecciona **"Imágenes del Tema"**
-3. **Sube/Configura:**
-   - Imagen del cintillo/banner
-   - Texto alternativo para accesibilidad
-   - Descripción del sitio
+### 4. Sección Contactanos (Footer)
+Incrusta el contenido de una página llamada "Contactanos" como footer.
 
-### Menú de Navegación
+#### Configuración
+1. Crea una página titulada exactamente "Contactanos".
+2. Agrega información de contacto, formularios, etc.
+3. Publica la página.
 
-1. Ve a **Apariencia → Menús**
-2. Crea un nuevo menú y asígnalo a **"Primary"**
-3. Si no hay menú, aparecerá automáticamente "Inicio"
+#### Apariencia
+- Fondo gris claro.
+- Contenido centrado.
+- Identificado con id="contactanos" para navegación.
 
-### Página de Entradas
+## Footer
 
-1. Crea una página llamada **"Blog"** o **"Noticias"**
-2. Ve a **Ajustes → Lectura**
-3. Selecciona **"Una página estática"** y asigna la página de entradas
+El footer muestra la sección Contactanos. No hay configuración adicional; se controla desde la página "Contactanos".
 
-## 🛠️ Desarrollo
+## Personalización Adicional
 
-### Estructura del Proyecto
+### Estilos
+- Usa Tailwind CSS; modifica `src/input.css` y compila con `pnpm run build:css`.
+- Clases responsive: `sm:`, `md:`, `lg:` para diferentes pantallas.
 
-```text
-aldeafpa/
-├── src/
-│   └── input.css          # Archivo CSS de entrada (Tailwind)
-├── inc/
-│   ├── customizer.php     # Configuraciones del personalizador
-│   └── custom-header.php  # Funciones del header
-├── js/
-│   └── customizer.js      # JavaScript del personalizador
-├── template-parts/        # Partes de plantilla reutilizables
-├── page.php              # Plantilla de páginas
-├── single.php            # Plantilla de entradas individuales
-├── index.php             # Página de entradas/noticias
-├── front-page.php        # Página principal personalizada
-├── functions.php         # Funciones principales del tema
-├── header.php            # Cabecera del sitio
-├── footer.php            # Pie de página
-└── style.css             # CSS compilado
-```
+### Funcionalidades
+- **Comentarios**: Deshabilitados en la página principal.
+- **Widgets**: Área de sidebar disponible, pero no usada en front-page.
+- **SEO**: Compatible con Yoast SEO u otros plugins.
 
-### Comandos de Desarrollo
+### Archivos Clave Modificados
+- `front-page.php`: Página principal con secciones.
+- `header.php`: Cabecera con banner y menú.
+- `footer.php`: Footer con sección Contactanos.
+- `functions.php`: Tamaños de imagen, menús, soporte de features.
+- `template-parts/content-blog-card.php`: Tarjetas de noticias.
+- `style.css` y `tailwind.config.js`: Estilos.
 
-```bash
-# Modo desarrollo (watch automático)
-npm run watch
+### Solución de Problemas
+- **Contenido no se muestra**: Asegura que las páginas estén publicadas y con contenido.
+- **Imágenes borrosas**: Regenera miniaturas con un plugin como "Regenerate Thumbnails".
+- **Menús no aparecen**: Asigna menús a las ubicaciones correctas.
+- **Estilos no aplican**: Ejecuta `pnpm run build:css` después de cambios.
 
-# Compilación completa
-npm run build
+### Actualizaciones
+- Para modificar secciones, edita `front-page.php`.
+- Agrega nuevas secciones copiando el patrón de las existentes.
+- Para soporte, revisa la consola de desarrollador para errores.
 
-# Limpiar archivos compilados
-npm run clean
-```
-
-### Tecnologías Utilizadas
-
-- **Tailwind CSS v4.1.17:** Framework CSS utility-first
-- **PostCSS:** Procesador CSS con autoprefixer
-- **WordPress Coding Standards:** Estándares de desarrollo
-- **ES Modules:** JavaScript moderno
-
-## 📱 Responsive Design
-
-El tema está completamente optimizado para:
-
-- **Móviles:** Diseño de una columna, menús apilados
-- **Tablets:** Layout adaptativo, navegación horizontal
-- **Desktop:** Diseño completo con múltiples columnas
-
-### Breakpoints Utilizados
-
-- `sm:` 640px y superior
-- `md:` 768px y superior
-- `lg:` 1024px y superior
-- `xl:` 1280px y superior
-
-## 🔧 Funcionalidades Avanzadas
-
-### Sistema de Cache
-
-- Compatible con plugins de cache populares
-- Optimización automática de assets
-- Lazy loading de imágenes
-
-### SEO y Accesibilidad
-
-- Estructura HTML5 semántica
-- Atributos alt en imágenes configurables
-- Navegación por teclado
-- Contraste de colores adecuado
-
-### Internacionalización
-
-- Preparado para múltiples idiomas
-- Text domain: `aldeafpa`
-- Archivos de traducción en `/languages/`
-
-## 📄 Licencia
-
-Este tema está bajo la licencia **GPLv2 o posterior**.
-
-## 🤝 Soporte
-
-Para soporte técnico o reportar problemas:
-
-- Crea un issue en el repositorio
-- Revisa la documentación en el código
-- Consulta las mejores prácticas de WordPress
-
----
-
-**Desarrollado con ❤️ para instituciones educativas que buscan excelencia en su presencia digital.**
+Este tema es completamente funcional y listo para uso. Si necesitas más personalizaciones, contacta al desarrollador. ¡Disfruta tu sitio web!
