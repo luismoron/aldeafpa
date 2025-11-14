@@ -90,7 +90,6 @@
                 setup_postdata($post);
             ?>
                 <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold text-center mb-8"><?php echo esc_html($nosotros_page->post_title); ?></h2>
                     <div class="prose prose-lg mx-auto">
                         <?php the_content(); ?>
                     </div>
